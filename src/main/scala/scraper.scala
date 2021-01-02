@@ -27,7 +27,7 @@ package scraper {
     }
 
     def getRawSourceFromUrl(url: String): String = {
-      Source.fromURL(url).mkString
+      Source.fromURL(url)("ISO-8859-1").mkString
     }
 
   }
