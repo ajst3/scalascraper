@@ -28,9 +28,15 @@ object TestScrap {
   }
 }
 
-if(testing && args(0) == "testbasicscrap") {
-  TestScrap.basic()
-}
-if(testing && args(0) == "testextractor") {
-  TestScrap.extractor()
+object main {
+
+  def main(args: Array[String]): Unit = {
+    if(testing && args(0) == "testbasicscrap") {
+      TestScrap.basic()
+    }
+    if(testing && args(0) == "testextractor") {
+      TestScrap.extractor()
+    }
+  }
+
 }
