@@ -26,7 +26,7 @@ package scraper.extractor {
     def extractElementsTextFromSource(source: String,
         tag: String): List[String] = {
 
-      val tagseq = source \ tag
+      val tagseq = XML.load(source) \ tag
       val elementlist = tagseq.toList
       var textlist = new ListBuffer[String]()
 

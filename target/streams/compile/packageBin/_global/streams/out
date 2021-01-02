@@ -1,4 +1,15 @@
 [0m[[0m[0mdebug[0m] [0m[0mPackaging C:\Users\Austin Tercha\Documents\scalascraper\scalascraper\target\scala-2.12\scalascraper_2.12-0.1.0-SNAPSHOT.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scraper[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Austin Tercha\Documents\scalascraper\scalascraper\target\scala-2.12\classes\scraper[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scraper\extractor[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Austin Tercha\Documents\scalascraper\scalascraper\target\scala-2.12\classes\scraper\extractor[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scraper\extractor\Extractor$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Austin Tercha\Documents\scalascraper\scalascraper\target\scala-2.12\classes\scraper\extractor\Extractor$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scraper\extractor\Extractor.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Austin Tercha\Documents\scalascraper\scalascraper\target\scala-2.12\classes\scraper\extractor\Extractor.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scraper\Scraper$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Austin Tercha\Documents\scalascraper\scalascraper\target\scala-2.12\classes\scraper\Scraper$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scraper\Scraper.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Austin Tercha\Documents\scalascraper\scalascraper\target\scala-2.12\classes\scraper\Scraper.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
