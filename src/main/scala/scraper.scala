@@ -2,6 +2,8 @@
 * Module for scraping the contents of a website.
 */
 import scala.io.Source
+import org.jsoup._
+import org.jsoup.select._
 
 package scraper {
 
@@ -10,6 +12,14 @@ package scraper {
 
     def getRawSource(): String = {
       Scraper.getRawSourceFromUrl(url)
+    }
+
+    /*
+    * Sorts elements based on criteria defined by a criteria object
+    */
+    def sortElementsByCriteria(elems: Elements,
+        cri: Criteria): List[String] = {
+      List("s")  // Temporary to get compilation
     }
 
   }

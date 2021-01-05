@@ -10,6 +10,9 @@ package scraper.extractor {
   class Extractor {
     var source = ""
 
+    /*
+    * Extracts elements by text for a given tag.
+    */
     def extractElementsText(tag: String): List[String] = {
       Extractor.extractElementsTextFromSource(source, tag)
     }
