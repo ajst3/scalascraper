@@ -10,9 +10,7 @@ package scraper {
   class Scraper {
     var url = ""
 
-    def getRawSource: String = {
-      Scraper.getRawSourceFromUrl(url)
-    }
+    def getRawSource: String = Scraper.getRawSourceFromUrl(url)
 
     /*
     * Sorts elements based on criteria defined by a criteria object
