@@ -32,13 +32,19 @@ package scraper.extractor {
       var strlist = new ListBuffer[String]
 
       val html = Jsoup.parse(source).body()
-      val matched = html.getElementsByTag(tag).
-        select("*")
+      val matched = extractElementsByTag(source, tag)
 
       for(i <- 0 to matched.size() - 1) {
         strlist +=  matched.get(i).ownText()
       }
       strlist.toList
     }
+
+    def extractElementsByTag(source: String, tag: String): Elements = {
+      val html = Jsoup.parse(source).body()
+      html.getElementsByTag(tag).select("*")
+    }
+
   }
+
 }
