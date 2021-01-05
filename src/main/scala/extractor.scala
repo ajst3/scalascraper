@@ -1,7 +1,8 @@
 /*
 * Module for extracting elements and such from html source.
 */
-import scala.xml.XML
+import org.jsoup._
+import org.jsoup.select._
 import scala.collection.mutable.ListBuffer
 
 package scraper.extractor {
@@ -25,18 +26,16 @@ package scraper.extractor {
 
     def extractElementsTextFromSource(source: String,
         tag: String): List[String] = {
+      var strlist = new ListBuffer[String]
 
-      val tagseq = XML.loadString(source) \\ tag
-      val elementlist = tagseq.toList
-      var textlist = new ListBuffer[String]()
+      val html = Jsoup.parse(source).body()
+      val matched = html.getElementsByTag(tag).
+        select("*")
 
-      for(i <- 0 to elementlist.length) {
-        textlist += elementlist(i).text
+      for(i <- 0 to matched.size() - 1) {
+        strlist +=  matched.get(i).ownText()
       }
-
-      textlist.toList
+      strlist.toList
     }
-
   }
-
 }
