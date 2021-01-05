@@ -21,4 +21,25 @@ package scraper{
 
   }
 
+
+  class TextLength extends Criteria {
+
+    override def equals(left: Element, right: Element): Boolean = {
+      left.ownText().length() == right.ownText.length()
+    }
+
+    override def compare(left: Element, right: Element): Int = {
+      if(this.equals(left, right)) {
+        return 0
+      }
+      else if(left.ownText().length() > right.ownText().length()) {
+        return 1
+      }
+      else {
+        return -1
+      }
+    }
+
+  }
+
 }
