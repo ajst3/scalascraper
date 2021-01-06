@@ -13,7 +13,7 @@ package scraper {
   class Scraper {
     var url = ""
 
-    def getRawSource: String = Scraper.getRawSourceFromUrl(url)
+    def getRawSource: String = Scraper.getRawSourceFromJsoup(url)
 
     /*
     * Sorts elements based on criteria defined by a criteria object
@@ -100,6 +100,11 @@ package scraper {
 
     def getRawSourceFromUrl(url: String): String = {
       Source.fromURL(url)("ISO-8859-1").mkString
+    }
+
+    def getRawSourceFromJsoup(url: String): String = {
+      val doc = Jsoup.connect(url).get();
+      doc.outerHtml()
     }
 
   }
