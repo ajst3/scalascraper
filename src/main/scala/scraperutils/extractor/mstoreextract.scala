@@ -18,6 +18,18 @@ package scraper.extractor {
         this.source, id)
     }
 
+    def getStoreItemElements(numelements: Int): Elements = {
+      var ellist = new Elements()
+      var i = 0
+      var next = getStoreItemElement(i)
+      while(i < numelements && next != null) {
+        ellist.add(next)
+        i += 1
+        next = getStoreItemElement(i)
+      }
+      ellist
+    }
+
   }
 
   object MStore {
