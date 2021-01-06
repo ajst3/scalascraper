@@ -42,6 +42,9 @@ class TestScrap extends FunSuite{
     for(i <- 0 to sorted.length - 1) {
       Console.println(s"$i = ${sorted(i)}")
     }
+
+    val sortedm = s.sortElementsByCriteriaMaintain(pelements, cri)
+    Console.println(s"sorted maintained = $sortedm")
     Console.println(s"${Console.RESET}")
   }
 

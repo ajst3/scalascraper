@@ -31,6 +31,13 @@ package scraper {
       strlist.toList
     }
 
+    def sortElementsByCriteriaMaintain(elems: Elements,
+        cri: Criteria): Elements = {
+      var toreturn = elems.clone()
+      mergesortElements(toreturn.subList(0, toreturn.size()), cri)
+      toreturn
+    }
+
     private def mergesortElements(elems: util.List[nodes.Element],
         cri: Criteria): Unit = {
       if(elems.size() <= 1) {
