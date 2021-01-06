@@ -46,6 +46,11 @@ package scraper.extractor {
       html.getElementsByTag(tag).select("*")
     }
 
+    def extractElementsById(source: String, id: String): Element = {
+      val html = Jsoup.parse(source).body()
+      html.getElementById(id)
+    }
+
     def extractElementAttribute(elem: Element, att: String): String = {
       val attributes = elem.attributes().asList()
       for(i <- 0 to attributes.size() - 1) {
@@ -54,6 +59,10 @@ package scraper.extractor {
         }
       }
       "Element does not have that attribute"
+    }
+
+    def extractElementChildrenByTag(elem: Element, tag: String): Elements = {
+      elem.getElementsByTag(tag)
     }
 
   }
