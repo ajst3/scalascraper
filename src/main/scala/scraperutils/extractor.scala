@@ -2,6 +2,7 @@
 * Module for extracting elements and such from html source.
 */
 import org.jsoup._
+import org.jsoup.nodes._
 import org.jsoup.select._
 import scala.collection.mutable.ListBuffer
 
@@ -43,6 +44,16 @@ package scraper.extractor {
     def extractElementsByTag(source: String, tag: String): Elements = {
       val html = Jsoup.parse(source).body()
       html.getElementsByTag(tag).select("*")
+    }
+
+    def extractElementAttribute(elem: Element, att: String): String = {
+      val attributes = elem.attributes().asList()
+      for(i <- 0 to attributes.size() - 1) {
+        if(attributes.get(i).getKey() == att) {
+          return attributes.get(i).getValue()
+        }
+      }
+      "Element does not have that attribute"
     }
 
   }

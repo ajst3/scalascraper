@@ -16,6 +16,18 @@ class TestScrap extends FunSuite{
     Console.println(s"${Console.RESET}")
   }
 
+  test("Extracting attributes") {
+    Console.println(s"${Console.BLUE}${Console.WHITE_B} Extracting Attributes")
+    val s = Scraper("https://ajst3.github.io/")
+    val psource = s.getRawSource
+    val aelements = extractor.Extractor.extractElementsByTag(psource, "a")
+    val att1 = extractor.Extractor.
+      extractElementAttribute(aelements.get(0), "href")
+    Console.println(s"a element 1 = ${aelements.get(0)}")
+    Console.println(s"href of a element 1 = ${att1}")
+    Console.println(s"${Console.RESET}")
+  }
+
   test("Sort by Basic Criteria") {
     val s = Scraper("https://ajst3.github.io/")
     val psource = s.getRawSource

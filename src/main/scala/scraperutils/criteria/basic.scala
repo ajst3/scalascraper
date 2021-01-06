@@ -4,7 +4,7 @@
 import org.jsoup._
 import org.jsoup.nodes._
 
-package scraper{
+package scraper {
 
   // Base Class
   abstract class Criteria {
