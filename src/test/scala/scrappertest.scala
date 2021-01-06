@@ -1,7 +1,7 @@
 import scraper._
 import org.scalatest._
 
-class TestScrap extends FunSuite{
+class TestScrap extends FunSuite {
 
   test("Extractor class Elements Text") {
     Console.println(
