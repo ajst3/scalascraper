@@ -6,6 +6,8 @@ import org.jsoup.nodes._
 import org.jsoup.select._
 import scala.collection.mutable.ListBuffer
 
+import scraper.exceptions._
+
 package scraper.extractor {
 
   class Extractor {
@@ -56,9 +58,13 @@ package scraper.extractor {
     /*
     * Gets an element based on ID. Returns a singular element.
     */
-    def extractElementsById(source: String, id: String): Element = {
+    def extractElementById(source: String, id: String): Element = {
       val html = Jsoup.parse(source).body()
-      html.getElementById(id)
+      val elem = html.getElementById(id)
+      if(elem == null) {
+        throw new NoElementFoundException(s"No element with id $id found")
+      }
+      elem
     }
 
     /*
@@ -66,14 +72,19 @@ package scraper.extractor {
     * Returns a string saying no value was found, if there attribute
     * is not found.
     */
-    def extractElementAttribute(elem: Element, att: String): String = {
+    def extractElementAttribute(elem: Element, att: String,
+        throwerror: Boolean): String = {
       val attributes = elem.attributes().asList()
       for(i <- 0 to attributes.size() - 1) {
         if(attributes.get(i).getKey() == att) {
           return attributes.get(i).getValue()
         }
       }
-      "Element does not have that attribute"
+
+      if(throwerror) {
+        throw new NoAttributeException(s"$att not an attribute of element")
+      }
+      "No attribute found"
     }
 
     /*

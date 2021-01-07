@@ -23,13 +23,13 @@ package scraper {
       var pelem: Element = null
       for(i <- 0 to pelems.size() - 1) {
         val itemprop = Extractor.
-          extractElementAttribute(pelems.get(i), "itemprop")
+          extractElementAttribute(pelems.get(i), "itemprop", false)
         if(itemprop == "price") {
           pelem = pelems.get(i)
         }
       }
 
-      Extractor.extractElementAttribute(pelem, "content").
+      Extractor.extractElementAttribute(pelem, "content", true).
         replace("$", "").toDouble
     }
 

@@ -16,7 +16,7 @@ package scraper.extractor {
     */
     def getStoreItemElement(number: Int): Element = {
       val id = s"${gameidprefix}${number}"
-      Extractor.extractElementsById(
+      Extractor.extractElementById(
         this.source, id)
     }
 

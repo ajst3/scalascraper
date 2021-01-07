@@ -22,7 +22,7 @@ class TestScrap extends FunSuite {
     val psource = s.getRawSource
     val aelements = extractor.Extractor.extractElementsByTag(psource, "a")
     val att1 = extractor.Extractor.
-      extractElementAttribute(aelements.get(0), "href")
+      extractElementAttribute(aelements.get(0), "href", true)
     Console.println(s"a element 1 = ${aelements.get(0)}")
     Console.println(s"href of a element 1 = ${att1}")
     Console.println(s"${Console.RESET}")
