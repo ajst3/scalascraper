@@ -11,12 +11,19 @@ package scraper.extractor {
   class MStore extends Extractor {
     val gameidprefix = "productplacementlist_"
 
+    /*
+    * Gets a store element using the id of elements.
+    */
     def getStoreItemElement(number: Int): Element = {
       val id = s"${gameidprefix}${number}"
-      Extractor.extractElementsById(
+      Extractor.extractElementById(
         this.source, id)
     }
 
+    /*
+    * Gets numelements store item elements and returns them
+    * as an Elements object.
+    */
     def getStoreItemElements(numelements: Int): Elements = {
       var ellist = new Elements()
       var i = 0

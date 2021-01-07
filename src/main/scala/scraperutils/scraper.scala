@@ -10,6 +10,10 @@ import scala.collection.mutable.ListBuffer
 
 package scraper {
 
+  /*
+  * Basic object used for general webscrapping operations like element
+  * sorting.
+  */
   class Scraper {
     var url = ""
 
@@ -31,6 +35,10 @@ package scraper {
       strlist.toList
     }
 
+    /*
+    * Sorts elements based on criteria defined by a criteria object and
+    * returns an Elements object (which is a list of the sorted elements)
+    */
     def sortElementsByCriteriaMaintain(elems: Elements,
         cri: Criteria): Elements = {
       var toreturn = elems.clone()
@@ -38,6 +46,10 @@ package scraper {
       toreturn
     }
 
+    /*
+    * Uses mergesort to sort a list of elements and uses the criteria
+    * object to compare the elements.
+    */
     private def mergesortElements(elems: util.List[nodes.Element],
         cri: Criteria): Unit = {
       if(elems.size() <= 1) {
@@ -98,10 +110,12 @@ package scraper {
       scrap
     }
 
+    // Don't use anymore, jsoup library is more reliable for getting source
     def getRawSourceFromUrl(url: String): String = {
       Source.fromURL(url)("ISO-8859-1").mkString
     }
 
+    // Using jsoup, gets the raw html from a given url
     def getRawSourceFromJsoup(url: String): String = {
       val doc = Jsoup.connect(url).get();
       doc.outerHtml()
